@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <nav className="flex h-10 items-center justify-between bg-gradient-to-t from-purple-800 to-purple-950 px-2">
+    <nav className="flex h-10 items-center justify-between bg-[#E0007A] px-2">
       <div>
         <h1 className="py-1 text-2xl font-bold text-white">Zzz</h1>
       </div>

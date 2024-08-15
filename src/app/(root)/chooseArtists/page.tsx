@@ -86,28 +86,27 @@ const ChooseArtists: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    router.push("/");
     setCookie("artists", selectedArtists.join("#"));
-    console.log("Selected artists:", selectedArtists);
+    router.push("/");
   };
 
   return (
-    <div className="min-h-screen text-white">
-      <div className="mx-auto max-w-6xl p-6">
+    <div className="min-h-screen pb-10 text-white">
+      <div className="mx-auto max-w-6xl p-4">
         <h1 className="mb-4 text-4xl font-bold text-purple-200">
           Choose your favorite artists
         </h1>
         <p className="mb-6 text-purple-300">
           Select at least three artists you like.
         </p>
-        <div className="mb-8 grid grid-cols-3 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        <div className="mb-8 grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {artists.map((artist) => (
             <div
               key={artist.id}
               className={`transform cursor-pointer text-center transition-all duration-300 hover:scale-105 hover:shadow-lg ${
                 selectedArtists.includes(artist.name)
-                  ? "rounded-lg bg-purple-500 bg-opacity-50 shadow-md"
-                  : "rounded-lg bg-purple-800 bg-opacity-30"
+                  ? "rounded-lg bg-[#E0007A] bg-opacity-50 shadow-md"
+                  : "rounded-lg bg-white/5 bg-opacity-30"
               }`}
               onClick={() => toggleArtist(artist.name)}
             >
