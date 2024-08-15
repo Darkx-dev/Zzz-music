@@ -3,8 +3,10 @@ import React from "react";
 import { useState } from "react";
 import { searchGlobal, searchSongs } from "@/services/api";
 import { useSearch } from "@/context/SearchContext";
+import { useRouter } from "next/navigation";
 
 const SearchBar = ({ className }: { className: string }) => {
+  const router = useRouter();
   const { setSearchResults, setSongSearchResults } = useSearch();
   const [query, setQuery] = useState("");
   const handleSearch = async (e: any) => {

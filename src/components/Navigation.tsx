@@ -81,7 +81,7 @@ const Navigation = () => {
               <li key={route.name}>
                 <Link href={route.href}>
                   <div
-                    className={`flex items-center gap-2 border-b-2 border-purple-600 border-opacity-0 pb-1 ${isActive ? "border-opacity-100" : undefined}`}
+                    className={`flex items-center gap-2 border-b-2 border-[#FF1494] border-opacity-0 pb-1 ${isActive ? "border-opacity-100" : undefined}`}
                   >
                     {route.icon}
                   </div>

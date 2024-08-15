@@ -47,27 +47,30 @@ const MusicPlayer: React.FC = () => {
   if (!songNow) return null;
 
   return (
-    <div className="flex w-screen items-start justify-between gap-2 bg-purple-800/25 p-2 backdrop-blur-md">
+    <div className="flex w-screen items-center justify-between gap-2 bg-[#7B004180] p-2 backdrop-blur-sm">
       <div>
         <Image
           src={songNow.image[1].url}
-          width={75}
-          height={75}
+          width={85}
+          height={85}
           alt={songNow.name}
           className="rounded-lg"
         />
       </div>
       <div className="w-full">
         <h3>{songNow.name}</h3>
+        <p className="text-gray-400 text-xs">{songNow.artists.primary[0].name}</p>
         <audio
           ref={audioRef}
           src={songNow.downloadUrl[4]?.url}
           autoPlay
+          contentEditable
+          controls
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
           hidden
         ></audio>
-        <div className="mt-2 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className="flex items-center">
             <span className="text-xs">
               {Math.floor(currentTime / 60)}:
@@ -108,7 +111,7 @@ const MusicPlayer: React.FC = () => {
                 .padStart(2, "0")}
             </span>
           </div>
-            <label className="flex h-10 w-9 cursor-pointer flex-col items-center justify-center scale-75">
+            <label className="flex h-8 w-8 cursor-pointer flex-col items-center justify-center scale-75">
               <input className="peer hidden" type="checkbox" onChange={togglePlayPause} aria-label="Play/Pause"/>
               <div className="h-[2px] w-[50%] origin-center -translate-x-[0.3rem] translate-y-[0.1rem] rotate-90 rounded-sm bg-white transition-all duration-300 peer-checked:translate-y-[0.1rem]"></div>
               <div className="h-[2px] w-[50%] origin-center -translate-y-[0.05rem] translate-x-[0.3rem] rotate-90 rounded-md bg-white transition-all duration-300 peer-checked:translate-x-[0.15rem] peer-checked:translate-y-[0.22rem] peer-checked:rotate-[-30deg]"></div>

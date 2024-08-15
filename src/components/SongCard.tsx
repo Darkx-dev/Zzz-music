@@ -17,7 +17,7 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
   };
 
   return (
-    <div className="flex items-center rounded-lg bg-white/25 p-2 shadow-md">
+    <div className="flex items-center rounded-lg bg-[#E0007A] p-2 shadow-md">
       <div className="relative h-12 w-12 flex-shrink-0">
         <Image
           src={song.image[0].url}
