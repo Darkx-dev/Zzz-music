@@ -9,10 +9,11 @@ interface SongCardProps {
 }
 
 const SongCard: React.FC<SongCardProps> = ({ song }) => {
-  const { setSong } = usePlayer();
-  const handleSongPlayPause = async (songId: string) => {
-    const response = await getSongById(songId);
-    setSong(response.data[0]);
+  const { setSongNow, songNow } = usePlayer();
+  const handleSongPlayPause = async () => {
+    if (songNow && songNow.id === song.id) return
+    const response = await getSongById(song.id);
+    setSongNow(response.data[0]);
   };
 
   return (
@@ -30,7 +31,7 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
         <h3 className="truncate text-wrap text-sm font-semibold text-gray-800">
           {song.title || song.name}
         </h3>
-        <p className="w-24 truncate text-xs text-gray-600">
+        <p className="w-24 truncate text-xs text-gray-400">
           {song.primaryArtists ||
             song.artists?.primary.map((artist) => artist.name)}
         </p>
@@ -39,7 +40,7 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
         <button
           className="p-1"
           aria-label="Play"
-          onClick={() => handleSongPlayPause(song.id)}
+          onClick={handleSongPlayPause}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

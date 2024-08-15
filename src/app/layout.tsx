@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png" />
+      <meta name="theme-color" content="#042940" />
       <body className={ubuntu.className + " text-white"}>
         <PlayerProvider>
           <SearchProvider>{children}</SearchProvider>

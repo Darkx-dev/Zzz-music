@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
     <div>
-      <MusicPlayer/>
+      <h1>Home</h1>
     </div>
   );
 };

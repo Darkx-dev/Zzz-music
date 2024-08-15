@@ -7,7 +7,7 @@ const Search = () => {
   return (
     <>
       <div className="relative flex h-28 items-center justify-end">
-        <h2 className="absolute left-0 top-0 text-3xl font-medium">
+        <h2 className="absolute left-2 top-0 text-3xl font-medium">
           Listen <br />
           the <br /> rhythm
         </h2>

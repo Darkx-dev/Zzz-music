@@ -4,21 +4,21 @@ import { createContext, useContext, useEffect, useState } from "react";
 import React from "react";
 
 interface PlayerContextType {
-  song: any;
-  setSong: (song: Song) => void;
+  songNow: any;
+  setSongNow: (song: Song) => void;
 }
 
 const PlayerContext = createContext<PlayerContextType | undefined>(undefined);
 
 const PlayerProvider = ({ children }: { children: React.ReactNode }) => {
-  const [song, setSong] = useState<Song>();
+  const [songNow, setSongNow] = useState<Song>();
 
   useEffect(() => {
-    console.log(song)
-  }, [song])
+    console.log(songNow)
+  }, [songNow])
 
   return (
-    <PlayerContext.Provider value={{ song, setSong }}>
+    <PlayerContext.Provider value={{ songNow, setSongNow }}>
       {children}
     </PlayerContext.Provider>
   );
