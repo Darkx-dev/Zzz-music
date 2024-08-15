@@ -7,12 +7,12 @@ const SearchList: React.FC = () => {
   const { searchResults, songSearchResults } = useSearch();
 
   return (
-    <div className="grid h-full gap-2 px-2 pb-24">
-      <h1>Top results</h1>
+    <div className="grid h-full gap-2 px-2 pb-36">
+      {searchResults.data?.songs?.results && <h1>Top results</h1>}
       {searchResults.data?.songs?.results.map((song: Song) => (
         <SongCard key={song.id} song={song} />
       ))}
-      <h1>All results</h1>
+      {songSearchResults.data?.results && <h1>All results</h1>}
       {songSearchResults.data?.results.map((song: Song) => (
         <SongCard key={song.id} song={song} />
       ))}
