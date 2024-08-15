@@ -3,6 +3,8 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import SearchProvider from "@/context/SearchContext";
 import PlayerProvider from "@/context/PlayerContext";
+import NavBar from "@/components/NavBar";
+import Navigation from "@/components/Navigation";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -26,6 +28,7 @@ export default function RootLayout({
       <meta name="theme-color" content="#042940" />
       <body className={ubuntu.className + " text-white"}>
         <PlayerProvider>
+          <NavBar />
           <SearchProvider>{children}</SearchProvider>
         </PlayerProvider>
       </body>

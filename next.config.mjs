@@ -17,6 +17,9 @@ const withPWA = PWA({
   dest: "public",
   register: true,
   skipWaiting: true,
+  disableDevLogs: true,
+  disable: true,
 });
 
 export default withPWA(nextConfig);
+// export default nextConfig

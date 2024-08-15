@@ -21,8 +21,8 @@ const getSongById = (id: string) =>
 const getSongLyrics = (id: string) =>
   fetch(`${BASE_URL}/songs/${id}/lyrics`).then((res) => res.json());
 
-const getSongSuggestions = (id: string) =>
-  fetch(`${BASE_URL}/songs/${id}/suggestions`).then((res) => res.json());
+const getSongSuggestions = (id: string, limit = 10) =>
+  fetch(`${BASE_URL}/songs/${id}/suggestions?limit=${limit}`).then((res) => res.json());
 
 const getAlbumById = (id: string) =>
   fetch(`${BASE_URL}/albums/${id}`).then((res) => res.json());
@@ -30,8 +30,8 @@ const getAlbumById = (id: string) =>
 const getArtistById = (id: string) =>
   fetch(`${BASE_URL}/artists/${id}`).then((res) => res.json());
 
-const getArtistSongs = (id: string) =>
-  fetch(`${BASE_URL}/artists/${id}/songs`).then((res) => res.json());
+const getArtistSongs = (id: string, page = 0) =>
+  fetch(`${BASE_URL}/artists/${id}/songs?page=${page}`).then((res) => res.json());
 
 const getArtistAlbums = (id: string) =>
   fetch(`${BASE_URL}/artists/${id}/albums`).then((res) => res.json());
